@@ -1,0 +1,54 @@
+i need to make a learning app here are the specs 
+1. chat
+2. question and answer (chapter/topic wise) such that suppose there is book iot contains multiple chapters according to that it must generate question with the answers with number of questions 10,20,25 
+3. answer quiz evealuation in that page use must choose chapter/topic which is option and with that he must use answer quiz or mcq quiz , i mean answer quiz user will wirte answer and it will be evealuated with number of questions 10,20,25 
+4. notes generation  must generate question with chapterwise or overall too with comprehensive and explainaery for better 
+
+make user managemnet for that use sqlite dataabase with a table user with their u_id , username and password 
+by using their user id make sure that their management
+
+use RAG for storing book with user amangement in mind 
+for different scenerious use different retrival techiniches use but embedding is single retrival must be based on the types for different techniques
+
+use together ai for that here are the docs 
+
+for llm 
+"""
+from together import Together
+
+client = Together()
+response = client.chat.completions.create(
+  model="OpenAI/gpt-oss-20B",
+  messages=[
+  	{
+	    "role": "user", 
+      "content": "Given two binary strings `a` and `b`, return their sum as a binary string"
+    }
+ ],
+)
+
+print(response.choices[0].message.content)
+"""
+
+for embedding 
+"""
+from together import Together
+
+client = Together()
+
+response = client.embeddings.create(
+  model = "BAAI/bge-base-en-v1.5-vllm",
+  input = "Our solar system orbits the Milky Way galaxy at about 515,000 mph"
+)
+
+"""
+use qdrant for rag storage 
+i will provide yo the api keys later so that leave .env for me s
+
+only make backend - using fastapi python with uvicorn
+use sqlite database with sqlalchemy by creating it 
+
+
+make sure to have a correct project struction for better understanding and keep in mind , the user will upload pdf/docs using that we need to extract the text we should only store the text data for storage effcient 
+
+the RAG must be effcient and effective
